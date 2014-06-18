@@ -6,8 +6,11 @@
     },
     "autoload": {
         "psr-0" : {
-            "mseshachalam\\TheSameCat" : "src"
-        }
+            "mseshachalam\\TheSameCat\\" : "src/"
+        },
+         "classmap": [
+            "src"
+        ]
     },
     "authors": [
         {
