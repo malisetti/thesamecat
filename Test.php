@@ -1,14 +1,9 @@
 <?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Test
- *
- * @author seshachalam
+ * dHash Test
+ * @author abbiya@gmail.com
  */
+ 
 require_once __DIR__.'/vendor/autoload.php';
 use mseshachalam\TheSameCat\DifferenceHashing;
 
