@@ -2,15 +2,10 @@
 
 namespace mseshachalam\TheSameCat;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of DifferenceHashingInterface
- *
- * @author seshachalam
+ * DifferenceHashing(https://news.ycombinator.com/item?id=2614797)
+ * Refer http://blog.iconfinder.com/detecting-duplicate-images-using-python/
+ * @author abbiya@gmail.com
  */
 interface DifferenceHashingInterface
 {
