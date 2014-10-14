@@ -11,15 +11,15 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class DifferenceHashing implements DifferenceHashingInterface
 {
+    const COMMON_HEIGHT = 8;
+    const COMMON_WIDTH = 9;
 
     private $imagePath;
     private $interventionImage;
     private $width;
     private $height;
-    private $commonHeight = 8;
-    private $commonWidth = 9;
-    private $pixels;
-    private $difference;
+    private $pixels = array();
+    private $difference = array();
     private $binaryStr;
     private $hexStr;
 
@@ -29,8 +29,6 @@ class DifferenceHashing implements DifferenceHashingInterface
         $this->interventionImage = Image::make($image);
         $this->width = $this->interventionImage->width();
         $this->height = $this->interventionImage->height();
-        $this->pixels = array();
-        $this->difference = array();
     }
 
     public function compareAdjacentPixels()
@@ -92,7 +90,7 @@ class DifferenceHashing implements DifferenceHashingInterface
 
     public function shrinkImageToCommonSize()
     {
-        $this->interventionImage->resize($this->commonWidth, $this->commonHeight);
+        $this->interventionImage->resize(self::COMMON_WIDTH, self::COMMON_HEIGHT);
         $this->width = $this->interventionImage->width();
         $this->height = $this->interventionImage->height();
 
