@@ -25,6 +25,6 @@ interface DifferenceHashingInterface
 
     public function convertDifferenceIntoBits();
 
-    public function compareHashes();
+    public function compareHashes($hash1, $hash2);
 
 }

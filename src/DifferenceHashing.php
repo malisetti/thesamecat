@@ -62,9 +62,9 @@ class DifferenceHashing implements DifferenceHashingInterface
         return $this;
     }
 
-    public function compareHashes()
+    public function compareHashes($hash1, $hash2)
     {
-        
+        return $hash1 === $hash2;
     }
 
     public function convertDifferenceIntoBits()
@@ -72,13 +72,13 @@ class DifferenceHashing implements DifferenceHashingInterface
         $this->binaryStr = '';
         foreach($this->difference as $diff) {
             foreach($diff as $d) {
-                $this->binaryStr .= ($d === true) ? 1 : 0;
+                $this->binaryStr .= (int)$d;
             }
         }
-        $this->hexStr = bin2hex($this->binaryStr);
         
-        var_dump($this->hexStr);
-        die();
+        $this->hexStr = dechex(bindec($this->binaryStr));
+        
+        return $this->hexStr;
     }
 
     public function greyScaleImage()

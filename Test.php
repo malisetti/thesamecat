@@ -12,9 +12,7 @@
 require_once __DIR__.'/vendor/autoload.php';
 use mseshachalam\TheSameCat\DifferenceHashing;
 
-$dHash = new DifferenceHashing('/home/seshachalam/Desktop/cat_grumpy_orig_step_1.png');
+//full path to image ?
+$dHash = new DifferenceHashing('/home/seshachalam/Desktop/cat_grumpy_modif.png');
 
-$dHash->openImage()->shrinkImageToCommonSize()->greyScaleImage()->compareAdjacentPixels()->convertDifferenceIntoBits();
-
-print 'there';
-die();
+echo $dHash->openImage()->shrinkImageToCommonSize()->greyScaleImage()->compareAdjacentPixels()->convertDifferenceIntoBits();
