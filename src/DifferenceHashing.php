@@ -2,15 +2,10 @@
 
 namespace mseshachalam\TheSameCat;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of DifferenceHashing
+ * DifferenceHashing(https://news.ycombinator.com/item?id=2614797)
  * Refer http://blog.iconfinder.com/detecting-duplicate-images-using-python/
- * @author seshachalam
+ * @author abbiya@gmail.com
  */
 use Intervention\Image\ImageManagerStatic as Image;
 
