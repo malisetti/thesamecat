@@ -22,7 +22,7 @@ class DifferenceHashing implements DifferenceHashingInterface {
     private $difference = array();
 
     public function __construct($image) {
-        $this->imagePath = $image;
+        $this->imagePath = (string)$image;
         $this->interventionImage = Image::make($image);
         $this->width = $this->interventionImage->width();
         $this->height = $this->interventionImage->height();
@@ -43,7 +43,7 @@ class DifferenceHashing implements DifferenceHashingInterface {
         foreach ($hRange as $row) {
             foreach ($wRange as $col) {
                 if ($col != $this->width) {
-                    $this->difference[$row][$col] = $this->pixels[$row] > $this->pixels[$col];
+                    $this->difference[$row][$col] = (int)($this->pixels[$row] > $this->pixels[$col]);
                 }
             }
         }
@@ -56,12 +56,7 @@ class DifferenceHashing implements DifferenceHashingInterface {
     }
 
     public function convertDifferenceIntoBits() {
-        $binaryStr = '';
-        foreach ($this->difference as $diff) {
-            foreach ($diff as $d) {
-                $binaryStr .= (int) $d;
-            }
-        }
+        $binaryStr = implode('', $this->difference);
 
         return dechex(bindec($binaryStr));
     }
